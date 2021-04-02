@@ -1,0 +1,12 @@
+{
+  "name": "shows-ms-app",
+  "displayName": "shows-ms-app",
+  "expo": {
+    "name": "shows-ms-app",
+    "slug": "shows-ms-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
