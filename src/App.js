@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Home } from './screens/Home';
 import { Shows } from './screens/Shows';
 import { NewShow } from './screens/NewShow';
-import { TabBar } from './components/TabBar';
+import { TabBar } from './components/tab/TabBar';
 
 const tabNav = createBottomTabNavigator();
 
