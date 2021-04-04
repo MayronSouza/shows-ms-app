@@ -1,13 +1,25 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Home = ({ navigation }) => {
+const Home = () => {
 
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.title}>
+      <Text style={styles.text}>Séries Inc.</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 40,
+    color: '#f99000',
+  }
+});
 
 export { Home };
