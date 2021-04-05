@@ -15,6 +15,7 @@ const ShowList = () => {
     <FlatList
       style={styles.container}
       data={list}
+      keyExtractor={(item) => item.id}
       renderItem={
         ({ item }) => (
           <TouchableOpacity onPress={() => console.log(item.id)} style={styles.buttonTouch}>
