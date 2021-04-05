@@ -23,11 +23,9 @@ const styles = StyleSheet.create({
   },
   list: {
     flex: 2,
-    backgroundColor: 'blue',
   },
   details: {
     flex: 1,
-    backgroundColor: 'green',
   },
 });
 
