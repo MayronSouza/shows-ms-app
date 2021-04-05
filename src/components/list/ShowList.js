@@ -1,25 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { showApi } from '../../api/show';
 
-const items = [
-    {
-      id: 1,
-      name: 'Friends',
-    },
-    {
-      id: 2,
-      name: 'Heroes',
-    },
-    {
-      id: 3,
-      name: 'Two and half man',
-    },
-  ];
 const ShowList = () => {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    showApi.get('/shows').then(response => {
+      setList(response.data);
+    });
+  }, []);
+
   return (
     <FlatList
       style={styles.container}
-      data={items}
+      data={list}
       renderItem={
         ({ item }) => (
           <TouchableOpacity onPress={() => console.log(item.id)} style={styles.buttonTouch}>
