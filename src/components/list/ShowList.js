@@ -17,7 +17,7 @@ const ShowList = () => {
   return (
     <FlatList
       style={styles.container}
-      data={shows}
+      data={shows.sort((show1, show2) => (''+show1.name).localeCompare(show2.name))}
       keyExtractor={(item) => item.id}
       renderItem={
         ({ item }) => (

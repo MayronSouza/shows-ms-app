@@ -7,8 +7,7 @@ const useShows = () => {
 
   useEffect(() => {
     showApi.get('/shows').then(response => {
-      const action = { type: 'createList', payload: response.data };
-      dispatch(action);
+      dispatch({ type: 'createList', payload: response.data });
     });
   }, []);
 

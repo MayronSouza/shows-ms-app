@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    flex: 2,
+    flex: 1,
   },
   details: {
-    flex: 1,
+    flex: 2,
   },
 });
 
