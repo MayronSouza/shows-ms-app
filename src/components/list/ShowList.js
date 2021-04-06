@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { showApi } from '../../api/show';
+import { useShows } from '../../hooks/useShows';
 
 const ShowList = () => {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    showApi.get('/shows').then(response => {
-      setList(response.data);
-    });
-  }, []);
+  const { shows } = useShows();
 
   return (
     <FlatList
       style={styles.container}
-      data={list}
+      data={shows}
       keyExtractor={(item) => item.id}
       renderItem={
         ({ item }) => (
@@ -34,16 +28,19 @@ const styles = StyleSheet.create({
   buttonTouch: {
     flexDirection: 'row',
     justifyContent: 'center',
-    margin: 8,
-    padding: 5,
-    borderRadius: 50,
-    backgroundColor: '#f99000'
+    margin: 4,
+    padding: 3,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderTopColor: '#f99000',
+    borderBottomColor: '#f99000',
+    backgroundColor: '#000'
   },
   text: {
-    padding: 5,
-    fontSize: 20,
+    padding: 2,
+    fontSize: 14,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#f99000',
   }
 });
 
