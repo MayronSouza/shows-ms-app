@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { AppContext } from '../../context/AppContext';
 import { useShows } from '../../hooks/useShows';
 
 const ShowList = () => {
   const { shows } = useShows();
+  const { dispatch } = useContext(AppContext);
+
+  const handleSelectedItem = (id) => {
+    dispatch({
+      type: 'setSelectedItem',
+      payload: id,
+    });
+  }
 
   return (
     <FlatList
@@ -12,7 +21,7 @@ const ShowList = () => {
       keyExtractor={(item) => item.id}
       renderItem={
         ({ item }) => (
-          <TouchableOpacity onPress={() => console.log(item.id)} style={styles.buttonTouch}>
+          <TouchableOpacity onPress={() => handleSelectedItem(item.id)} style={styles.buttonTouch}>
             <Text style={styles.text}>{item.name}</Text>
           </TouchableOpacity>
         )

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text } from 'react-native';
+import { AppContext } from '../../context/AppContext';
 
 const ShowDetail = () => {
+  const { state } = useContext(AppContext);
+
   return (
-    <View></View>
+    <View>
+      <Text>{state.selectedItem}</Text>
+    </View>
   );
 }
 
