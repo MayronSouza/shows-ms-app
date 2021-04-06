@@ -1,3 +1,7 @@
+import { createContext } from "react";
+
+const AppContext = createContext();
+
 const appReducer = (state, action) => {
   switch(action.type) {
     case 'createList':
@@ -7,4 +11,8 @@ const appReducer = (state, action) => {
   }
 };
 
-export { appReducer };
+const initialState = {
+  showList: new Array(),
+}
+
+export { AppContext, appReducer, initialState };
