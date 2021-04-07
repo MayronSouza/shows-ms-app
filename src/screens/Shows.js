@@ -20,6 +20,7 @@ const Shows = () => {
 const styles = StyleSheet.create({
   parent: {
     flex: 1,
+    backgroundColor: '#212121',
   },
   list: {
     flex: 1,

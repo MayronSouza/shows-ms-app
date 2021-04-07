@@ -4,17 +4,18 @@ import { View, Text, StyleSheet } from 'react-native';
 const Home = () => {
 
   return (
-    <View style={styles.title}>
+    <View style={styles.container}>
       <Text style={styles.text}>Séries Inc.</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  title: {
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#212121',
   },
   text: {
     fontSize: 40,
